@@ -1,6 +1,7 @@
 ---
-title:  "管线埋设方式字典"
+title:  "管线属性数据字典：埋设方式"
 categories: pipeline
+sequence: 003
 ---
 
 来源出处：
