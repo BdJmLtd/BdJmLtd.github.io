@@ -4,7 +4,28 @@ categories: pipeline
 sequence: 006
 ---
 
-## 数值处理
+## 开发环境
+
+- JDK版本：17
+- IDE: IntelliJ IDEA 2022.1.3 (Community Edition)
+
+## 整体思路
+
+{:refdef: style="text-align: center;"}
+![](/assets/image/pipeline/excel-point-and-line-data-check-implementation.png)
+{: refdef}
+
+最开始的数据，是从Excel文件（点表、线表）读取而来；如果直接使用操作Excel的类库（例如，Apache POI），可能会显得“不灵活”。
+因为这些数据，也有可能从数据库读取而来。
+
+如果将这些数据表示成内存中的`String[][]`，会不会灵活一些呢？
+也就是说，最原始的数据可能来自于Excel文件，也可能来自于数据库，
+将这些数据统一转换成`String[][]`来处理。
+
+
+## 单元格内容处理
+
+### 数值处理
 
 <p>
     数值类型处理的思路：
