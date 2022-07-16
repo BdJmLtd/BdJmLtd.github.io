@@ -247,6 +247,12 @@ set PATH_TO_FX_MODS="D:\software\jdk\javafx-jmods-18.0.1"
 jpackage --type exe -d installer -i libs --main-jar excel-check-fx-1.0-SNAPSHOT.jar -n JMExcelCheck --module-path %PATH_TO_FX_MODS% --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.web --main-class cn.jm.fx.Main --win-menu --win-menu-group JinMa --vendor 保定市金马漏水检测有限公司 --win-shortcut --win-dir-chooser --icon ..\src\main\resources\images\jm-logo.ico
 ```
 
+没有`javafx.web`：
+
+```text
+jpackage --type exe -d installer -i libs --main-jar excel-check-fx-1.0-SNAPSHOT.jar -n JMExcelCheck --module-path %PATH_TO_FX_MODS% --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics --main-class cn.jm.fx.Main --win-menu --win-menu-group JinMa --vendor 保定市金马漏水检测有限公司 --win-shortcut --win-dir-chooser --icon ..\src\main\resources\images\jm-logo.ico
+```
+
 {:refdef: style="text-align: center;"}
 ![生成exe](/assets/image/pipeline/jpackage-application-to-exe.png)
 {: refdef}

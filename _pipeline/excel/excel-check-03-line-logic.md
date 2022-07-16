@@ -49,6 +49,20 @@ sequence: 004
 ![](/assets/image/pipeline/line-check-duplicate.png)
 {: refdef}
 
+## 最大埋深检查
+
+检查内容：
+
+- 每一行数据，如果“起点埋深”和“终点埋深”的值超过了最大埋深，则进行提示。
+
+如何设置最大埋深的值？
+
+- 在`设置|线检查设置`里，可以设置`管线最大埋深`的值：
+
+{:refdef: style="text-align: center;"}
+![](/assets/image/pipeline/jm-excel-check-settings-line-check-max-depth.png)
+{: refdef}
+
 ## 属性一致性检查
 
 检查内容：
