@@ -59,6 +59,8 @@ collections:
     output: true
   pipeline:
     output: true
+  underGridPieLineSort:
+      output: true
   three-dimension:
     output: true
   windows:
@@ -67,9 +69,14 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: "pages"
+      type: "underGridPieLineSort"
     values:
-      layout: "home"
+      layout: "post"
+  - scope:
+       path: ""
+       type: "pages"
+    values:
+        layout: "home"
   - scope:
       path: ""
       type: "posts"
