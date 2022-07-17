@@ -95,14 +95,16 @@ public static double getDistance(double x1, double y1, double z1,
 
 ### 介绍
 
-管线坡度，计算“管线”与“水平面”的夹角。
+<p>
+管线坡度，计算“管线”与“水平面”的夹角\( \theta \)：
+</p>
 
 {:refdef: style="text-align: center;"}
 ![管线坡度](/assets/image/pipeline/pipeline-slope.png)
 {: refdef}
 
 <p>
-先通过<code>height</code>和<code>length</code>的值，计算出\(sin \theta\)的值：
+第一步，通过<code>height</code>和<code>length</code>的值，计算出\(sin \theta\)的值：
 </p>
 
 
@@ -113,7 +115,7 @@ sin \theta = \frac{height}{length}
 </p>
 
 <p>
-再通过\(arcsin\)来计算\(\theta\)的值：
+第二步，通过\(arcsin\)来计算\(\theta\)的值：
 </p>
 
 <p>
@@ -124,7 +126,10 @@ sin \theta = \frac{height}{length}
 
 ---
 
-注意：
+<br/>
+<p>
+为什么没有使用\(tan \theta\)和\(cos \theta\)呢？
+</p>
 
 <ol>
   <li>没有使用\(tan \theta\)。因为有些管线是“垂直”的，就是会现\(\frac{height}{width} = \frac{height}{0}\)的情况</li>
@@ -188,12 +193,9 @@ public static double getSlope(double x1, double y1, double z1,
 ### 验证
 
 ```text
-管点多通检查：299
-|001| CS1连接到1条管线，其特征是非普查区，目前使用的特征有：[非普查, 起止点, 出地点, 堵头, 出水口, 上杆]
+管点多通检查：1
+|001| CS1连接到1条管线，其特征是非普查区，目前使用的特征有：[非普查, 起止点, ...]
      行2 列1：CS1~CS2
-|002| CS2连接到2条管线，其特征是水表井，目前使用的特征有：[转折点, 直线点, 变径点, 变坡点, 变材点]
-     行2 列1：CS1~CS2
-     行3 列1：CS2~CS3
 ```
 
 在第`|001|`数据中，`非普查区`和`非普查`是同一个意思，但是程序认为两者是不同的，这时候，需要将`非普查区`加入到一个方向特征的配置当中。
@@ -204,7 +206,9 @@ public static double getSlope(double x1, double y1, double z1,
 
 计算内容：
 
-- 同一个管点，可以连接多条管线；计算连接同一管点的任意两个管线之间的夹角。夹角，是三维空间的夹角，不是二维空间，要考虑x, y, z。
+- 同一个管点，可以连接多条管线；计算连接同一管点的任意两个管线之间的夹角。
+
+夹角，是三维空间的夹角，不是二维空间，要考虑x, y, z。
 
 ### 预处理
 
