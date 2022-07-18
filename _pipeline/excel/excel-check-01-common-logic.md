@@ -25,6 +25,10 @@ sequence: 002
 
 在软件的`设置|点检查设置`中，可以设置`非空字段`来修改具体的值。
 
+{:refdef: style="text-align: center;"}
+![](/assets/image/pipeline/jm-excel-check-settings-point-check.png)
+{: refdef}
+
 线表，检查内容：
 
 - 起始点号
@@ -43,6 +47,10 @@ sequence: 002
 
 在软件的`设置|线检查设置`中，可以设置`非空字段`来修改具体的值。
 
+{:refdef: style="text-align: center;"}
+![](/assets/image/pipeline/jm-excel-check-settings-line-check.png)
+{: refdef}
+
 ## 数值检查
 
 点表，检查内容：
@@ -54,6 +62,10 @@ sequence: 002
 
 在软件的`设置|点检查设置`中，可以设置`数值字段`来修改具体的值。
 
+{:refdef: style="text-align: center;"}
+![](/assets/image/pipeline/jm-excel-check-settings-point-check.png)
+{: refdef}
+
 线表，检查内容：
 
 - 起点埋深
@@ -63,3 +75,7 @@ sequence: 002
 - 管径
 
 在软件的`设置|线检查设置`中，可以设置`数值字段`来修改具体的值。
+
+{:refdef: style="text-align: center;"}
+![](/assets/image/pipeline/jm-excel-check-settings-line-check.png)
+{: refdef}

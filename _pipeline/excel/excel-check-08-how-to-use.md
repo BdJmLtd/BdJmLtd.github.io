@@ -108,7 +108,12 @@ D:\Data\某庆\化二+厂外点线表
 
 检查顺序：先**基础检查**，再进行**点检查**，再进行**线检查**，最后进行**点线联合检查**。
 
-检查内容细节，可以参考[这里]({% link _posts/2022-07-09-pipeline.md %})
+检查内容细节，可以参考[这里]({% link _posts/2022-07-09-pipeline.md %})：
+
+- [基础检查]({% link _pipeline/excel/excel-check-01-common-logic.md %})
+- [点检查]({% link _pipeline/excel/excel-check-02-point-logic.md %})
+- [线检查]({% link _pipeline/excel/excel-check-03-line-logic.md %})
+- [点线联合检查]({% link _pipeline/excel/excel-check-04-both-point-and-line-logic.md %})
 
 注意：如果直接使用“点线联合检查”的功能，很大概率会出现错误，其原因是数据当中存在错误，在前几步检查当中需要先检测出来，进行修正。
 
