@@ -57,6 +57,8 @@ plugins:
 collections:
   gis:
     output: true
+  hydraulic-model:
+    output: true
   pipeline:
     output: true
   underGridPieLineSort:
@@ -85,6 +87,11 @@ defaults:
   - scope:
       path: ""
       type: "gis"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "hydraulic-model"
     values:
       layout: "post"
   - scope:

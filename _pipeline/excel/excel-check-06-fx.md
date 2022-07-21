@@ -24,18 +24,24 @@ sequence: 007
 
 在`src/main/resources/fxml`目录中，存放了多个`*.fxml`文件：
 
-- `main-view.fxml`:：主界面
-- `point-meta-view.fxml`：点信息设置界面
-- `point-check-view.fxml`：点检查设置界面
-- `line-meta-view.fxml`：线信息设置界面
-- `line-check-view.fxml`：线检查设置界面
-- `about-view.fxml`：关于界面
+- 主界面：`main-view.fxml`
+- 数据设置：`data-setting-view.fxml`
+- 点、线元信息设置
+  - 点信息：`point-meta-setting-view.fxml`
+  - 线信息：`line-meta-setting-view.fxml`
+- 点、线检查设置
+  - 点检查：`point-check-setting-view.fxml`
+  - 线检查：`line-check-setting-view.fxml`
+- 点要素编码：`feature-code-choose-type-view.fxml`
+- 关于界面：`about-view.fxml`
 
 ### 配置文件
 
-- `point-meta-config.properties`：点信息
-- `point-check-config.properties`：点检查
-- `point-code.txt`：点编码
-- `line-meta-config.properties`：线信息
-- `line-check-config.properties`：线检查
-- `user-config.properties`：用户
+在`src/main/resources/config`目录中，存放了多个`*.properties`文件：
+
+- 点信息：`point-meta-config.properties`
+- 点检查：`point-check-config.properties`
+- 点编码：`point-code.txt` （可以编辑）
+- 线信息：`line-meta-config.properties`
+- 线检查：`line-check-config.properties`
+- 用户：`user-config.properties`

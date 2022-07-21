@@ -1,6 +1,5 @@
 ---
 title:  "三维建模软件"
-categories: 3d
 sequence: 001
 ---
 

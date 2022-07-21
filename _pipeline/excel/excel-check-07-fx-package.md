@@ -91,7 +91,7 @@ application = code + dependencies
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>cn.jm.fx.Main</mainClass>
+                            <mainClass>jm.excel.fx.Main</mainClass>
                             <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
                             <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
                         </manifest>
@@ -138,7 +138,7 @@ mvn package -Dmaven.test.skip=true
 
 这一步执行完成后，会将依赖的Jar包都复制到`target/libs`目录下。
 
-第二步，将`excel-check-fx-1.0-SNAPSHOT.jar`复制到`target/libs`目录中。
+第二步，将`jm-excel-fx-1.0-SNAPSHOT.jar`复制到`target/libs`目录中。
 
 ## JavaFX SDK和jmods
 
@@ -244,17 +244,52 @@ set PATH_TO_FX_MODS="D:\software\jdk\javafx-jmods-18.0.1"
 第二步，执行`jpackage`命令生成exe文件：
 
 ```text
-jpackage --type exe -d installer -i libs --main-jar excel-check-fx-1.0-SNAPSHOT.jar -n JMExcelCheck --module-path %PATH_TO_FX_MODS% --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.web --main-class cn.jm.fx.Main --win-menu --win-menu-group JinMa --vendor 保定市金马漏水检测有限公司 --win-shortcut --win-dir-chooser --icon ..\src\main\resources\images\jm-logo.ico
+jpackage --type exe --dest installer --input libs ^
+--main-jar jm-excel-fx-1.0-SNAPSHOT.jar ^
+--main-class jm.excel.fx.Main ^
+--module-path %PATH_TO_FX_MODS% ^
+--add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics ^
+--win-menu --win-shortcut --win-dir-chooser ^
+--win-menu-group JinMa ^
+--name JMExcelCheck ^
+--app-version 1.0.1 ^
+--vendor 保定市金马漏水检测有限公司 ^
+--icon ..\src\main\resources\images\jm-logo.ico
 ```
 
-没有`javafx.web`：
+注意检查事项：
+
+- 第一，有没有将`--main-jar`指定的Jar包（例如，`jm-excel-fx-1.0-SNAPSHOT.jar`）放到`--input`指定的目录（例如，`libs`）
+- 第二，`--main-jar`和`--main-class`的值是否写正确。
+- 第三，`--app-version`是否需要更新
+- 第四，`--add-modules`是否需要添加新的内容，例如`javafx.web`。
+
+<div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border">
+    <p>通常，在使用Windows命令行时，当输入一个命令后回车代表执行该命令。</p>
+    <p>但是，有时命令过长或其他原因，我们想在命令中换行，怎么办呢？</p>
+    <p>这时，可以在一行末尾加“^”号再回车，代表命令还要继续。</p>
+</div>
+
+在`--add-modules`中，如果不包含`javafx.web`，生成`exe`的体积45MB；
+如果包含`javafx.web`，生成`exe`的体积70MB，体积变化有点大。
+引入`javafx.web`，会让程序功能更丰富，我还没有想好怎么使用，或者说不太会用它：
 
 ```text
-jpackage --type exe -d installer -i libs --main-jar excel-check-fx-1.0-SNAPSHOT.jar -n JMExcelCheck --module-path %PATH_TO_FX_MODS% --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics --main-class cn.jm.fx.Main --win-menu --win-menu-group JinMa --vendor 保定市金马漏水检测有限公司 --win-shortcut --win-dir-chooser --icon ..\src\main\resources\images\jm-logo.ico
+jpackage --type exe --dest installer --input libs ^
+--main-jar jm-excel-fx-1.0-SNAPSHOT.jar ^
+--main-class jm.excel.fx.Main ^
+--module-path %PATH_TO_FX_MODS% ^
+--add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.web ^
+--win-menu --win-shortcut --win-dir-chooser ^
+--win-menu-group JinMa ^
+--name JMExcelCheck ^
+--app-version 1.0.2 ^
+--vendor 保定市金马漏水检测有限公司 ^
+--icon ..\src\main\resources\images\jm-logo.ico
 ```
 
 {:refdef: style="text-align: center;"}
-![生成exe](/assets/image/pipeline/jpackage-application-to-exe.png)
+![生成exe](/assets/image/pipeline/jpackage-application-to-exe.gif)
 {: refdef}
 
 执行完成之后，会生成exe文件：
