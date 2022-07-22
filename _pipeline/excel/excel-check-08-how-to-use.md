@@ -4,6 +4,24 @@ categories: pipeline
 sequence: 008
 ---
 
+## 下载
+
+### 版本1.0.3
+
+JMExcelCheck-1.0.3.exe发布
+
+主要修改内容：
+
+- 界面显示行号和列号；
+- 读取Excel优化；
+- 增加`工具|软件初始化`功能；
+- 从配置文件中读取水种名称信息
+
+下载地址：
+
+- 地址：[https://lsieun.lanzouw.com/iAGXO087czve](https://lsieun.lanzouw.com/iAGXO087czve)
+- 密码: `7v2k`
+
 ## 安装和卸载
 
 ### 安装
