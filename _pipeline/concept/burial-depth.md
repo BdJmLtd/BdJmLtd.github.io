@@ -1,5 +1,5 @@
 ---
-title:  "Burial Depth"
+title:  "Burial Depth埋深"
 ---
 
 ## 最小埋深
