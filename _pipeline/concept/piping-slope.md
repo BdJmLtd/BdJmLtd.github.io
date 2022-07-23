@@ -1,5 +1,5 @@
 ---
-title:  "Piping Slope"
+title:  "Piping Slope管线坡度"
 ---
 
 The piping slope is the change in elevation with respect to its flat horizontal position.

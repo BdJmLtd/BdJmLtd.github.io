@@ -66,13 +66,15 @@ application = code + dependencies
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jm-excel</artifactId>
+        <groupId>bdjm</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.jm</groupId>
-    <artifactId>excel-check-fx</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>excel-check-fx</name>
+    <artifactId>jm-excel-fx</artifactId>
 
     <!-- 省略... -->
 
@@ -80,14 +82,7 @@ application = code + dependencies
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -103,7 +98,6 @@ application = code + dependencies
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <id>lib-copy-dependencies</id>
@@ -123,6 +117,32 @@ application = code + dependencies
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-jar-package</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <!-- 将项目生成的Jar包复制到target/libs目录下 -->
+                            <outputDirectory>${project.build.directory}/libs</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}</directory>
+                                    <includes>
+                                        <include>*.jar</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
@@ -130,15 +150,16 @@ application = code + dependencies
 
 ### 生成Jar包
 
-第一步，执行下面的命令生成Jar包：
+执行命令生成Jar包：
 
 ```text
 mvn package -Dmaven.test.skip=true
 ```
 
-这一步执行完成后，会将依赖的Jar包都复制到`target/libs`目录下。
+这一步执行完成后：
 
-第二步，将`jm-excel-fx-1.0-SNAPSHOT.jar`复制到`target/libs`目录中。
+- 会将依赖的Jar包都复制到`target/libs`目录下。
+- 会生成`jm-excel-fx-1.0-SNAPSHOT.jar`，并复制到`target/libs`目录中。
 
 ## JavaFX SDK和jmods
 
