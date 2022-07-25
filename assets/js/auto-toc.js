@@ -16,9 +16,7 @@
 (function ($) {
     $.fn.autoToc = function () {
         return this.each(function () {
-            console.log("Hello TOC");
             let totalNum = $("article h2").length; //Find the total number of h2 available in article
-            console.log(totalNum);
             if (totalNum === 0) return;
 
             let $autoToc = $("<div></div>"); //Create div for the table
@@ -48,14 +46,8 @@
                     text = first_index + "." + second_index + "." + third_index + " " + text;
                 }
 
-                let head_id = h.attr("id");
-                let anchor;
-                if (head_id != null) {
-                    anchor = head_id;
-                } else {
-                    anchor = "mark_" + first_index + "_" + second_index + "_" + third_index;
-                    h.attr("id", anchor);
-                }
+                let anchor = "mark_" + first_index + "_" + second_index + "_" + third_index;
+                h.attr("id", anchor);
                 h.text(text);
                 // h.html('<span class="w3-tag w3-wide">' + text + '</span>');
 
