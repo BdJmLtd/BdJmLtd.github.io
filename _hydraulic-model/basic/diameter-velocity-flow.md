@@ -50,8 +50,11 @@ sequence: 002
 
 ## 计算
 
+### 流量
+
 <form>
 <table>
+<caption>计算流量</caption>
 <thead>
 </thead>
 <tr>
@@ -59,16 +62,16 @@ sequence: 002
     <td>3.1415926</td>
 </tr>
 <tr>
-    <td><label for="pipe-diameter">管径：</label></td>
-    <td><input id="pipe-diameter" type="text" value="200"/>\(mm\)</td>
+    <td><label for="pipe-diameter-1">管径：</label></td>
+    <td><input id="pipe-diameter-1" type="text" value="200"/>\(mm\)</td>
 </tr>
 <tr>
-    <td><label for="pipe-velocity">流速：</label></td>
-    <td><input id="pipe-velocity" type="text" value="3"/>\(m/s\)</td>
+    <td><label for="pipe-velocity-1">流速：</label></td>
+    <td><input id="pipe-velocity-1" type="text" value="3"/>\(m/s\)</td>
 </tr>
 <tr>
-    <td><label for="pipe-flow">流量：</label></td>
-    <td><input id="pipe-flow" type="text" disabled="disabled"/>\(m^{3}/h\)</td>
+    <td><label for="pipe-flow-1">流量：</label></td>
+    <td><input id="pipe-flow-1" type="text" disabled="disabled"/>\(m^{3}/h\)</td>
 </tr>
 <tr>
     <td class="w3-center" colspan="2">
@@ -79,16 +82,105 @@ sequence: 002
 </table>
 </form>
 
+### 流速
+
+<form>
+<table>
+<caption>计算流速</caption>
+<thead>
+</thead>
+<tr>
+    <td>圆周率（\(\pi\)）</td>
+    <td>3.1415926</td>
+</tr>
+<tr>
+    <td><label for="pipe-diameter-2">管径：</label></td>
+    <td><input id="pipe-diameter-2" type="text" value="200"/>\(mm\)</td>
+</tr>
+<tr>
+    <td><label for="pipe-flow-2">流量：</label></td>
+    <td><input id="pipe-flow-2" type="text" value="339"/>\(m^{3}/h\)</td>
+</tr>
+<tr>
+    <td><label for="pipe-velocity-2">流速：</label></td>
+    <td><input id="pipe-velocity-2" type="text" disabled="disabled"/>\(m/s\)</td>
+</tr>
+
+<tr>
+    <td class="w3-center" colspan="2">
+        <input type="button" value="计算" onclick="calculateVelocity()"/>
+        <input type="reset" value="重置"/>
+    </td>
+</tr>
+</table>
+</form>
+
+### 管径
+
+<form>
+<table>
+<caption>计算管径</caption>
+<thead>
+</thead>
+<tr>
+    <td>圆周率（\(\pi\)）</td>
+    <td>3.1415926</td>
+</tr>
+<tr>
+    <td><label for="pipe-flow-3">流量：</label></td>
+    <td><input id="pipe-flow-3" type="text" value="339"/>\(m^{3}/h\)</td>
+</tr>
+<tr>
+    <td><label for="pipe-velocity-3">流速：</label></td>
+    <td><input id="pipe-velocity-3" type="text" value="3"/>\(m/s\)</td>
+</tr>
+<tr>
+    <td><label for="pipe-diameter-3">管径：</label></td>
+    <td><input id="pipe-diameter-3" type="text" disabled="disabled"/>\(mm\)</td>
+</tr>
+<tr>
+    <td class="w3-center" colspan="2">
+        <input type="button" value="计算" onclick="calculateDiameter()"/>
+        <input type="reset" value="重置"/>
+    </td>
+</tr>
+</table>
+</form>
+
 <script>
     function calculateFlow() {
-        const diameter = $('#pipe-diameter').val();
-        const velocity = $('#pipe-velocity').val();
+        const diameter = $('#pipe-diameter-1').val();
+        const velocity = $('#pipe-velocity-1').val();
         const pi = 3.1415926;
         const radius = diameter / 1000 / 2;
         const area = pi * radius * radius;
         const flow = area * velocity * 3600;
         const value = flow.toFixed(7);
-        $('#pipe-flow').val(value);
+        $('#pipe-flow-1').val(value);
+    }
+
+    function calculateVelocity() {
+        const flow = $('#pipe-flow-2').val();
+        const diameter = $('#pipe-diameter-2').val();
+        const pi = 3.1415926;
+        const radius = diameter / 1000 / 2;
+        const area = pi * radius * radius;
+        const velocity = flow / (area * 3600);
+        const value = velocity.toFixed(7);
+        $('#pipe-velocity-2').val(value);
+    }
+
+    function calculateDiameter() {
+        const flow = $('#pipe-flow-3').val();
+        const velocity = $('#pipe-velocity-3').val();
+        const pi = 3.1415926;
+        
+        const area = flow / (velocity * 3600);
+        const radius = Math.sqrt(area / pi);
+        const diameter = radius * 2 * 1000;
+        const value = diameter.toFixed(7);
+        
+        $('#pipe-diameter-3').val(value);
     }
 </script>
 

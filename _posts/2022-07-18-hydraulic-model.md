@@ -29,7 +29,7 @@ EPA = U.S. Environmental Protection Agency 美国环境保护局
 NET = network
 ```
 
-{% assign filtered_posts = site.hydraulic-model | where_exp: "item", "item.url contains '/hydraulic-model/epanet/'"%}
+{% assign filtered_posts = site.hydraulic-model | where_exp: "item", "item.url contains '/hydraulic-model/epanet/'" | sort: "sequence" %}
 <ol>
     {% for post in filtered_posts %}
     {% assign num = post.sequence | abs %}
