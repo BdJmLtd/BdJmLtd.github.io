@@ -190,7 +190,7 @@ Roughness Coefficient
     </caption>
     <thead>
     <tr>
-        <th>Material</th>
+        <th class="w3-center">Material</th>
         <th class="w3-center">
             Hazen-Williams<br/>
             <span>\(C\)</span><br/>

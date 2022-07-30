@@ -270,7 +270,79 @@ T2    100     15       5       25      1     0      VC1
 
 ## System Operation
 
+### CURVES
+
+Defines data curves and their X,Y points.
+
+**Format**:
+
+One line for each X,Y point on each curve containing:
+
+- Curve ID label
+- X value
+- Y value
+
+Remarks:
+
+- Curves can be used to represent the following relations:
+  - Head v. Flow for pumps
+  - Efficiency v. Flow for pumps
+  - Volume v. Depth for tanks
+  - Headloss v. Flow for General Purpose Valves
+- **The points of a curve must be entered in order of increasing X-values (lower to higher)**.
+- If the input file will be used with the Windows version of EPANET,
+  then adding a comment which contains the curve type and description, separated by a colon,
+  directly above the first entry for a curve will ensure that these items appear correctly in EPANET's Curve Editor.
+  Curve types include **PUMP**, **EFFICIENCY**, **VOLUME**, and **HEADLOSS**.
+
+**Example**:
+
+```text
+[CURVES]
+;ID   Flow    Head
+;PUMP: Curve for Pump 1 C1 0 200
+C1    1000    100
+C1    3000    0
+
+;ID   Flow    Effic.
+;EFFICIENCY:
+E1    200     50
+E1    1000    85
+E1    2000    75
+E1    3000    65
+```
+
 ### PATTERNS
+
+Defines time patterns.
+
+**Format**:
+
+One or more lines for each pattern containing:
+
+- Pattern ID label
+- One or more multipliers
+
+**Remarks**:
+
+Multipliers define how some base quantity (e.g., demand) is adjusted for each time period.
+
+- All patterns share the same time period interval as defined in the `[TIMES]` section.
+- Each pattern can have a different number of time periods.
+- When the simulation time exceeds the pattern length the pattern wraps around to its first period.
+- Use as many lines as it takes to include all multipliers for each pattern.
+
+**Example**:
+
+```text
+[PATTERNS]
+;Pattern P1
+P1    1.1    1.4    0.9    0.7
+P1    0.6    0.5    0.8    1.0
+;Pattern P2
+P2    1      1      1      1
+P2    0      0      1
+```
 
 ## Options
 
@@ -643,6 +715,111 @@ QUALITY      TRACE   Tank23
 UNBALANCED   CONTINUE   10
 ```
 
+### TIMES
+
+Defines various time step parameters used in the simulation.
+
+**Format**:
+
+<table>
+<tbody>
+<tr>
+  <th class="w3-center">DURATION</th>
+  <td>Value (units)</td>
+</tr>
+<tr>
+  <th>HYDRAULIC TIMESTEP</th>
+  <td>Value (units)</td>
+</tr>
+<tr>
+  <th>QUALITY TIMESTEP</th>
+  <td>Value (units)</td>
+</tr>
+<tr>
+  <th>RULE TIMESTEP</th>
+  <td>Value (units)</td>
+</tr>
+<tr>
+  <th>PATTERN TIMESTEP</th>
+  <td>Value (units)</td>
+</tr>
+<tr>
+  <th>PATTERN START</th>
+  <td>Value (units)</td>
+</tr>
+<tr>
+  <th>REPORT TIMESTEP</th>
+  <td>Value (units)</td>
+</tr>
+<tr>
+  <th>REPORT START</th>
+  <td>Value (units)</td>
+</tr>
+<tr>
+  <th>START CLOCKTIME</th>
+  <td>Value (AM/PM)</td>
+</tr>
+<tr>
+  <th>STATISTIC</th>
+  <td>NONE/AVERAGED/MINIMUM/MAXIMUM/RANGE</td>
+</tr>
+</tbody>
+</table>
+
+Definitions:
+
+**DURATION** is the duration of the simulation. Use `0` to run a single period snapshot analysis. The default is `0`.
+
+**HYDRAULIC TIMESTEP** determines how often a new hydraulic state of the network is computed.
+If greater than either the **PATTERN** or **REPORT** time step it will be automatically reduced.
+The default is **1 hour**.
+
+**QUALITY TIMESTEP** is the time step used to track changes in water quality throughout the network.
+The default is `1/10` of the hydraulic time step.
+
+**RULE TIMESTEP** is the time step used to check for changes in system status due to activation of rule-based controls
+between hydraulic time steps.
+The default is `1/10` of the hydraulic time step.
+
+**PATTERN TIMESTEP** is the interval between time periods in all time patterns. The default is **1 hour**.
+
+**PATTERN START** is the time offset at which all patterns will start.
+For example, a value of 6 hours would start the simulation with each pattern in the time period
+that corresponds to hour 6.
+The default is `0`.
+
+**REPORT TIMESTEP** sets the time interval between which output results are reported. The default is 1 hour.
+
+**REPORT START** is the length of time into the simulation at which output results begin to be reported.
+The default is `0`.
+
+**START CLOCKTIME** is the time of day (e.g., 3:00 PM) at which the simulation begins.
+The default is 12:00 AM midnight.
+
+**STATISTIC** determines what kind of statistical post-processing should be done
+on the time series of simulation results generated.
+**AVERAGED** reports a set of time-averaged results, 
+**MINIMUM** reports only the minimum values, 
+**MAXIMUM** the maximum values,
+and **RANGE** reports the difference between the minimum and maximum values.
+**NONE** reports the full time series for all quantities for all nodes and links and is the default.
+
+Remarks:
+
+- Units can be **SECONDS** (**SEC**), **MINUTES** (**MIN**), **HOURS**, or **DAYS**. The default is hours.
+- If units are not supplied, then time values can be entered as `decimal hours` or in `hours:minutes` notation.
+- All entries in the `[TIMES]` section are optional. Items offset by slashes (`/`) indicate allowable choices.
+
+**Example**:
+
+```text
+[TIMES]
+DURATION           240 HOURS
+QUALITY TIMESTEP   3 MIN
+REPORT START       120
+STATISTIC          AVERAGED
+START CLOCKTIME    6:00 AM
+```
 
 
 ## Network Map/Tags

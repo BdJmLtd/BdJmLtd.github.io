@@ -3,6 +3,29 @@ title:  "EPANET: Measurement Units"
 sequence: 004
 ---
 
+1999年9月23日，美国的火星气候轨道器本应在80—90千米高度进入火星大气层，但在轨道切入操作中，地面人员犯下了致命的低级错误。
+在探测器飞行系统软件中，使用的是英制单位“磅”计算推进器动力，而地面人员输入方向校正量和推进器参数时，用的却是公制单位“牛顿”。
+两种单位的混淆造成了导航误差，使探测器直到距离火星仅57千米时才减速切入，最终导致探测器解体。
+
+On September 23, 1999, 125 million dollar burnt away in Mars' atmosphere.
+After some investigations, it was found that the two teams that collaborated on Mars Orbiter project
+had been working in two different unit systems.
+
+To avoid similar embarrassments, the first thing you must do when you start the program is to configure
+Epanet to make sure it will work with the right units.
+
+In order to do this, click on `Project` and select `Defaults`.
+
+{:refdef: style="text-align: center;"}
+![](/assets/image/hydraulic-model/epanet/menu-project-defaults.png)
+{: refdef}
+
+In the menu that appears, click on the `Hydraulics` tab and make sure that you put `CMH`.
+
+{:refdef: style="text-align: center;"}
+![](/assets/image/hydraulic-model/epanet/menu-project-defaults-hydraulics-flow-units-cmh.png)
+{: refdef}
+
 ## Measurement Units
 
 The toolkit can use data expressed in either US Customary of SI Metric units.
