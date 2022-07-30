@@ -41,6 +41,8 @@ NET = network
 
 ### 用户视角：使用软件
 
+A model can only be as good as the data which it is based on.
+
 {% assign filtered_posts = site.hydraulic-model | where_exp: "item", "item.url contains '/hydraulic-model/epanet-user/'"%}
 <ol>
     {% for post in filtered_posts %}
@@ -81,4 +83,6 @@ EPANET
     - [12. Analysis Algorithms](https://epanet22.readthedocs.io/en/latest/12_analysis_algorithms.html)
 - [Samples and libraries for EPANET developers (C, C++, C#, Haskell, Java, JavaScript, MATLAB, Python, Visual Basic)](http://epanet.de/developer/index.html.en)
 - [EPANET文件解析和管线还原](https://bibichuan.github.io/posts/9d35c66.html)
+
+- [Epanet and Development. How to calculate water networks by computer](https://issuu.com/arnalich/docs/epanet_and_development)
 

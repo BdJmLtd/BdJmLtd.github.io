@@ -1,5 +1,5 @@
 ---
-title:  "EPANET: Hydraulic 输入和输出"
+title: "EPANET: Hydraulic 输入和输出"
 sequence: 003
 ---
 
