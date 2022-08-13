@@ -3,6 +3,12 @@ title:  "EPANET: Warning And Error Codes"
 sequence: 006
 ---
 
+All the Toolkit functions return an error/warning code:
+
+- A `0` indicates that the function ran successfully.
+- A number greater than `0` but less than `100` indicates that a warning condition was generated
+- while a number higher than `100` indicates that the function failed.
+
 需要注意`224`错误：No tanks or reservoirs in network。
 
 ## Warning Codes
