@@ -3,19 +3,79 @@ title: "计算值"
 sequence: 118
 ---
 
+{:refdef: style="text-align: center;"}
+![](/assets/image/dma/water-loss-vs-real-loss.png)
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![](/assets/image/dma/standard-iwa-water-balance.png)
+{: refdef}
+
+## 漏失率
+
+漏失水量，是管网漏水量（物理漏水量），包括
+
+- 输水管及干管漏水量 （管网的输水过程）
+- 水池/水塔等渗漏及溢流 （管网中的储水容器）
+- 进户管漏失量 （从管网到用户）
+
+管网漏失率（中文）：
+
+<p>
+\[
+漏失率 = \frac{漏失水量}{供水量} \times 100 \%
+\]
+</p>
+
+管网漏失率（英文）：
+
+<p>
+\[
+R_{RL} = \frac{Q_{r1} + Q_{r2} + Q_{r3} + Q_{r4}}{Q_{s}} \times 100 \%
+\]
+</p>
+
+其中，
+
+<ul>
+    <li>\(R_{RL}\)表示管网漏失率（\(\%\)）。R表示Rate，RL表示Real Loss</li>
+    <li>\(Q_{r1}\)表示明漏水量（\(万m^{3}\)）</li>
+    <li>\(Q_{r2}\)表示暗漏水量（\(万m^{3}\)）</li>
+    <li>\(Q_{r3}\)表示背景漏失水量（\(万m^{3}\)）</li>
+    <li>\(Q_{r4}\)表示水箱、水池的渗漏和溢流水量（\(万m^{3}\)）</li>
+</ul>
+
+## 漏损率
+
+管网漏损率（中文）：
+
+<p>
+\[
+漏损率 = \frac{漏损水量}{供水量} \times 100 \%
+\]
+</p>
+
+管网漏损率（英文）：
+
+<p>
+\[
+R_{WL} = \frac{Q_{s}-Q_{a}}{Q_{s}} \times 100 \%
+\]
+</p>
+
+其中，
+
+<ul>
+    <li>\(R_{WL}\)表示管网漏损率（\(\%\)）。R表示Rate，WL表示Water Loss</li>
+    <li>\(Q_{s}\)表示供水总量（\(万m^{3}\)）</li>
+    <li>\(Q_{a}\)表示注册用水量（\(万m^{3}\)）</li>
+</ul>
+
 ## 产销差率
 
 <p>
 \[
 产销差率 = \frac{供水量 - 售水量}{供水量} \times 100 \%
-\]
-</p>
-
-## 漏失率
-
-<p>
-\[
-漏失率 = \frac{年漏失量}{年供水量} \times 100 \%
 \]
 </p>
 
@@ -80,3 +140,16 @@ L = Leak
 <p>
 对于直接压力供水或有加压设备（基于时间或流量）的DMA，\(NDF\)一般高于\(24h/d\)，也可能高达\(36h/d\)。
 </p>
+
+## ILI
+
+<p>
+\[
+ILI = \frac{CARL}{UARL} \times 100 \%
+\]
+</p>
+
+- ILI: Infrastructure Leakage Index 基础设施泄漏指数
+- CARL: Current Annual Real Losses 年总实际损失水量
+- UARL: Unavoidable Annual Real Losses 不可避免的年度实际损失
+
