@@ -98,3 +98,6 @@ EPANET
 
 - [Epanet and Development. How to calculate water networks by computer](https://issuu.com/arnalich/docs/epanet_and_development)
 
+视频：
+
+- [供水水力模型的建立](https://www.bilibili.com/video/BV1uZ4y1H7wQ)
