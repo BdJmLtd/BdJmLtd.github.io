@@ -68,13 +68,13 @@ application = code + dependencies
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>jm-excel</artifactId>
+        <artifactId>jm-data-excel</artifactId>
         <groupId>bdjm</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jm-excel-fx</artifactId>
+    <artifactId>jm-data-excel-gui-fx</artifactId>
 
     <!-- 省略... -->
 
@@ -86,7 +86,7 @@ application = code + dependencies
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>jm.excel.fx.Main</mainClass>
+                            <mainClass>jm.data.excel.gui.fx.Main</mainClass>
                             <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
                             <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
                         </manifest>
@@ -159,7 +159,7 @@ mvn package -Dmaven.test.skip=true
 这一步执行完成后：
 
 - 会将依赖的Jar包都复制到`target/libs`目录下。
-- 会生成`jm-excel-fx-1.0-SNAPSHOT.jar`，并复制到`target/libs`目录中。
+- 会生成`jm-data-excel-gui-fx-1.0-SNAPSHOT.jar`，并复制到`target/libs`目录中。
 
 ## JavaFX SDK和jmods
 
@@ -266,21 +266,21 @@ set PATH_TO_FX_MODS="D:\software\jdk\javafx-jmods-18.0.1"
 
 ```text
 jpackage --type exe --dest installer --input libs ^
---main-jar jm-excel-fx-1.0-SNAPSHOT.jar ^
---main-class jm.excel.fx.Main ^
+--main-jar jm-data-excel-gui-fx-1.0-SNAPSHOT.jar ^
+--main-class jm.data.excel.gui.fx.Main ^
 --module-path %PATH_TO_FX_MODS% ^
 --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics ^
 --win-menu --win-shortcut --win-dir-chooser ^
 --win-menu-group JinMa ^
 --name JMExcelCheck ^
---app-version 1.0.1 ^
+--app-version 1.0.5 ^
 --vendor 保定市金马漏水检测有限公司 ^
 --icon ..\src\main\resources\images\jm-logo.ico
 ```
 
 注意检查事项：
 
-- 第一，有没有将`--main-jar`指定的Jar包（例如，`jm-excel-fx-1.0-SNAPSHOT.jar`）放到`--input`指定的目录（例如，`libs`）
+- 第一，有没有将`--main-jar`指定的Jar包（例如，`jm-data-excel-gui-fx-1.0-SNAPSHOT.jar`）放到`--input`指定的目录（例如，`libs`）
 - 第二，`--main-jar`和`--main-class`的值是否写正确。
 - 第三，`--app-version`是否需要更新
 - 第四，`--add-modules`是否需要添加新的内容，例如`javafx.web`。
@@ -297,14 +297,14 @@ jpackage --type exe --dest installer --input libs ^
 
 ```text
 jpackage --type exe --dest installer --input libs ^
---main-jar jm-excel-fx-1.0-SNAPSHOT.jar ^
---main-class jm.excel.fx.Main ^
+--main-jar jm-data-excel-gui-fx-1.0-SNAPSHOT.jar ^
+--main-class jm.data.excel.gui.fx.Main ^
 --module-path %PATH_TO_FX_MODS% ^
 --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.web ^
 --win-menu --win-shortcut --win-dir-chooser ^
 --win-menu-group JinMa ^
 --name JMExcelCheck ^
---app-version 1.0.2 ^
+--app-version 1.0.5 ^
 --vendor 保定市金马漏水检测有限公司 ^
 --icon ..\src\main\resources\images\jm-logo.ico
 ```
