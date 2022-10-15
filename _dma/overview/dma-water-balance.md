@@ -36,8 +36,6 @@ sequence: 102
 ![水量平衡表](/assets/image/dma/water-balance-table-jm.png)
 {: refdef}
 
-
-
 ## 国际水协的水量平衡表
 
 <table>
