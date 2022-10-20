@@ -1,5 +1,5 @@
 ---
-title: "系统参数：夜日因子 NDF"
+title: "夜日因子 NDF (Night-Day Factors)"
 sequence: 112
 ---
 

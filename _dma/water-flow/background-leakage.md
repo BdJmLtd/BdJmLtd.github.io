@@ -1,5 +1,5 @@
 ---
-title: "系统参数：背景泄漏计算"
+title: "背景泄漏计算 (Background Leakage)"
 sequence: 115
 ---
 

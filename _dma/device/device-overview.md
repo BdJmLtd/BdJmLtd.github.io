@@ -1,6 +1,6 @@
 ---
-title: "计量：设备管理"
-sequence: 102
+title: "设备：概览"
+sequence: 101
 ---
 
 ## 设备

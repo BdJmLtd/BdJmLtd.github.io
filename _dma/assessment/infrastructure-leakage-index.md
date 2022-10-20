@@ -1,5 +1,5 @@
 ---
-title: "系统参数：Infrastructure Leakage Index (ILI)"
+title: "基础设施泄漏指数 ILI (Infrastructure Leakage Index)"
 sequence: 115
 ---
 
