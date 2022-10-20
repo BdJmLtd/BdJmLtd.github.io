@@ -1,5 +1,5 @@
 ---
-title: "系统参数：平均夜间压力 AZNP"
+title: "平均夜间压力 AZNP (Average Zone Night Pressure)"
 sequence: 111
 ---
 

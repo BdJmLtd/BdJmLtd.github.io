@@ -1,6 +1,6 @@
 ---
 title:  "数据字典"
-sequence: 108
+sequence: 109
 ---
 
 ## 免费供水类型

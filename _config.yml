@@ -71,6 +71,8 @@ collections:
     output: true
   three-dimension:
     output: true
+  water-balance:
+    output: true
   windows:
     output: true
 
@@ -118,6 +120,11 @@ defaults:
   - scope:
       path: ""
       type: "underGridPieLineSort"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "water-balance"
     values:
       layout: "post"
   - scope:
