@@ -12,10 +12,14 @@ sequence: 103
 泄漏主要有两部分组成：
 
 - 泄漏
-  - 背景泄漏（检测不到，通过视觉和声学的方法检测不到）
+  - 背景泄漏 Background Leakage（检测不到，通过视觉和声学的方法检测不到）
   - 破损泄漏（检测的到）
-    - 明漏
-    - 暗漏
+    - 明漏 Reported Leakage
+    - 暗漏 Unreported Leakage
+
+{:refdef: style="text-align: center;"}
+![](/assets/image/dma/types-of-real-losses.png)
+{: refdef}
 
 ## 背景泄漏
 
