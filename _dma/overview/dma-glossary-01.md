@@ -1,5 +1,5 @@
 ---
-title: "术语表"
+title: "术语表-01"
 sequence: 112
 ---
 
@@ -113,7 +113,7 @@ it means the boundaries of that area are watertight.
 - 流量范围（flow-rate range）：由最大流量和最小流量所限定的范围，在该范围内满足计量性能的要求。
 - 分界流量（transitional flow-rate）：在最大流量和最小流量之间的流量值，它将流量范围分割成两个区，即“高区”和“低区”。
 - 公称流量（nominal flow-rate）：在公称流量下，流量计应能在连续运行和间断运行时满足计量性能的要求。
-  - 注：对水表，公称流量称为常用流量。
+  - 注：对水表，**公称流量**称为**常用流量**。
 
 ### 第二组
 
