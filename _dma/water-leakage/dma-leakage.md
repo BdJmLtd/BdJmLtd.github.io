@@ -1,11 +1,17 @@
 ---
 title: "泄漏组成"
-sequence: 103
+sequence: 101
 ---
 
 {:refdef: style="text-align: center;"}
 ![](/assets/image/dma/dma-leakage.png)
 {: refdef}
+
+## 漏损原因
+
+Generally, leakage in the WDNs (Water Distribution Networks) occurs due to the low quality of materials in pipes
+or other network components, errors in design, inappropriate maintenance,
+high pressure in the network, and pipe break and bursts.
 
 ## 分类
 
@@ -55,6 +61,8 @@ sequence: 103
 
 ## 泄漏量
 
+### 公式
+
 总的泄漏量，受**识别**、**破损定位**、和**修复速度**的影响，因此控制漏水时间就可以减少漏水量。
 
 <p>
@@ -63,7 +71,7 @@ sequence: 103
 \]
 </p>
 
-## 漏水时间
+### 漏水时间
 
 应用DMA，可以极大地缩短发现漏水的时间和区域，实现漏点快速定位，以提高供水效益。
 
@@ -78,3 +86,21 @@ sequence: 103
 - 修复时间：在漏水点被精准定位后，修复所用的时间，包括策划以及依法向公路管理部门发送通告。
 
 总漏水量 = 单位时间泄漏量 X 漏水发生的时长
+
+## 漏损控制：主动和被动
+
+The methods of leakage reduction include **passive control**,
+like repairing the daily pipe breaks and bursts,
+and **active control of leaks**,
+such as the detection of the leakage exact location, repairing it,
+replacing the damaged pipelines, and pressure management.
+
+```text
+- passive control
+  - repairing the daily pipe breaks and bursts
+- active control
+  - the detection of the leakage exact location
+  - repairing it
+  - replacing the damaged pipelines
+  - pressure management
+```
