@@ -1,6 +1,6 @@
 ---
-title:  "管径、流速、流量"
-sequence: 002
+title: "管径、流速、流量"
+sequence: "002"
 ---
 
 ## 公式

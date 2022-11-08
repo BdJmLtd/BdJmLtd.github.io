@@ -1,6 +1,6 @@
 ---
-title:  "水力模型：介绍"
-sequence: 001
+title: "水力模型：介绍"
+sequence: "001"
 ---
 
 ## 是什么
