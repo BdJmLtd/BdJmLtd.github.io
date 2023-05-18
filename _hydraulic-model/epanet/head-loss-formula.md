@@ -1,5 +1,5 @@
 ---
-title:  "EPANET: 水头损失"
+title:  "EPANET: Headloss Formula 水头损失"
 sequence: 007
 ---
 
@@ -21,7 +21,28 @@ Roughness Coefficient ---> Resistance Coefficient ---> Head Loss
 
 ## 水头损失公式
 
-Head Loss Formula
+Headloss Formula
+
+Formula used to compute **head loss** as a function of **flow rate** in a **pipe**.
+
+```text
+笔记：
+位置：pipe
+函数：flow rate --> headloss
+```
+
+Choices are:
+
+- Hazen-Williams
+- Darcy-Weisbach
+- Chezy-Manning
+
+**Because each formula measures pipe roughness differently,
+switching formulas might require that all pipe roughness coefficients be updated.**
+
+```text
+笔记：如果更改了 headloss formula，就需要重新提供 pipe roughness coefficients
+```
 
 ### 三个公式
 
@@ -43,20 +64,20 @@ It cannot be used for liquids other than water and was
 originally developed for turbulent flow only.
 
 <div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border">
-    <p>Hazen-Williams，是最常用的，但是只适合于water</p>
+    <p>Hazen-Williams，是最常用的，但是只适合于 water</p>
 </div>
 
 The **Darcy-Weisbach formula** is the most theoretically correct.
 It applies over all flow regimes and to all liquids.
 
 <div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border">
-    <p>Darcy-Weisbach是理论上最正确的</p>
+    <p>Darcy-Weisbach 是理论上最正确的</p>
 </div>
 
 The **Chezy-Manning formula** is more commonly used for **open channel flow**.
 
 <div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border">
-    <p>Chezy-Manning最适合于open channel flow。</p>
+    <p>Chezy-Manning 最适合于 open channel flow。</p>
     <p>
 明渠流（英语：open-channel flow）是水力学的分支，是液体在管道或水路中的流动，而且液体存在自由表面，包括未全满的液体在管道中流动，则称为管流。 
 流体的重量是这种流体的主要驱动来源。

@@ -70,6 +70,8 @@ collections:
     output: true
   hydraulic-model:
     output: true
+  iot:
+    output: true
   pipeline:
     output: true
   underGridPieLineSort:
@@ -115,6 +117,11 @@ defaults:
   - scope:
       path: ""
       type: "hydraulic-model"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "iot"
     values:
       layout: "post"
   - scope:

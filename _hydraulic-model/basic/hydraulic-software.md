@@ -28,7 +28,7 @@ sequence: "004"
         <td class="w3-center"></td>
     </tr>
     <tr>
-        <td class="w3-center" rowspan="8">国外</td>
+        <td class="w3-center" rowspan="9">国外</td>
         <td class="w3-center">
             <a href="https://www.epa.gov/water-research/epanet" target="_blank">EPANET</a>
         </td>
@@ -36,12 +36,17 @@ sequence: "004"
         <td class="w3-center">免费开放源代码</td>
     </tr>
     <tr>
+        <td class="w3-center"><a href="https://www.bentley.com/software/openflows-watergems/" target="_blank">OpenFlows WaterGEMS</a></td>
+        <td class="w3-center">Bentley</td>
+        <td class="w3-center"></td>
+    </tr>
+    <tr>
         <td class="w3-center">WaterCAD</td>
         <td class="w3-center">美国海思德公司Haestad Methods</td>
         <td class="w3-center"></td>
     </tr>
     <tr>
-        <td class="w3-center">InfoWorks WS</td>
+        <td class="w3-center">InfoWorks WS (Water Supply)</td>
         <td class="w3-center">英国 Wallingford软件有限公司</td>
         <td class="w3-center"></td>
     </tr>
