@@ -1,6 +1,6 @@
 ---
 title:  "SwitchHosts"
-sequence: 001
+sequence: '001'
 ---
 
 ## 下载
@@ -95,6 +95,8 @@ https://github.com/oldj/SwitchHosts/releases
 
 ### ArcGIS
 
+应该失效了：
+
 ```text
 192.168.1.68 arcgisportal.jinma.cn
 192.168.1.50 arcgisserver.jinma.cn
@@ -103,6 +105,11 @@ https://github.com/oldj/SwitchHosts/releases
 ### WebSite
 
 ```text
+# Github
+20.205.243.166 github.com
+140.82.114.4 github.com
+20.27.177.113 github.com
+
 # Github Pages
 185.199.108.153 github.io
 185.199.109.153 github.io
@@ -128,4 +135,16 @@ https://github.com/oldj/SwitchHosts/releases
 104.22.60.77 mvnrepository.com
 104.22.61.77 mvnrepository.com
 172.67.28.102 mvnrepository.com
+```
+
+### 局域网
+
+```text
+192.168.1.200 maven.lan.net
+192.168.1.200 nacos.lan.net
+192.168.1.200 mysql.lan.net
+192.168.1.200 doc.lan.net
+192.168.1.200 jekyll.lan.net
+192.168.1.211 dma.lan.net
+192.168.1.211 device.lan.net
 ```
